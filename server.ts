@@ -94,7 +94,7 @@ app.get("/api/comments", async (req, res) => {
         const snippet = item.snippet.topLevelComment.snippet;
         const text = snippet.textDisplay;
         const analysis = sentiment.analyze(text);
-        
+
         let sentimentLabel = "neutral";
         if (analysis.score > 0) sentimentLabel = "positive";
         else if (analysis.score < 0) sentimentLabel = "negative";
